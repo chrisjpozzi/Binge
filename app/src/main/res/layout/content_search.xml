@@ -88,7 +88,8 @@
         android:text="List All"
         android:id="@+id/list"
         android:layout_alignTop="@+id/button2"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:clickable="true" />
 
 
 

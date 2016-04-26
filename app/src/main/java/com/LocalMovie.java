@@ -48,7 +48,13 @@ public class LocalMovie{
             System.err.println(e);
         }
     }
-
+    public ArrayList<LocalMovieObject> listAll(){
+        ArrayList<LocalMovieObject> result = new ArrayList<LocalMovieObject>(1);
+        for(int i=0; i<n; i++){
+            result.add(movies[i]);
+        }
+        return result;
+    }
     public ArrayList<LocalMovieObject> searchTitle(String search)
     {
         ArrayList<LocalMovieObject> result = new ArrayList<LocalMovieObject>(1);

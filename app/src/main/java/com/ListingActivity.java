@@ -33,23 +33,42 @@ public class ListingActivity extends AppCompatActivity {
         } else {
             search = (String) savedInstanceState.getSerializable("searchElem");
         }
-
-        LocalMovie db = new LocalMovie();
-        db.readLocalMovie(getApplicationContext());
-        String[] returnStrings = new String[1];
-        returnStrings[0] = "No results found.";
-        try {
-            if(db.searchTitle(search).size()!=0) {
-                returnStrings = new String[db.searchTitle(search).size()];
-                for (int i = 0; i < db.searchTitle(search).size(); i++) {
-                    returnStrings[i] = db.searchTitle(search).get(i).toString();
+        if(search.equals("%listall%")){
+            LocalMovie db = new LocalMovie();
+            db.readLocalMovie(getApplicationContext());
+            String[] returnStrings = new String[1];
+            returnStrings[0] = "No results found.";
+            try {
+                returnStrings = new String[db.listAll().size()];
+                for(int j=0; j<db.listAll().size(); j++){
+                    returnStrings[j] = db.listAll().get(j).title.toString();
                 }
-            }
-        }catch(Exception e){e.getMessage();}
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, returnStrings);
-        ListView content = (ListView) findViewById(R.id.listView);
-        content.setAdapter(adapter);
+            }catch(Exception e){e.getMessage();}
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, returnStrings);
+            ListView content = (ListView) findViewById(R.id.listView);
+            content.setAdapter(adapter);
+        }
+        else {
+            LocalMovie db = new LocalMovie();
+            db.readLocalMovie(getApplicationContext());
+            String[] returnStrings = new String[1];
+            returnStrings[0] = "No results found.";
+            try {
+                if (db.searchTitle(search).size() != 0) {
+                    returnStrings = new String[db.searchTitle(search).size()];
+                    for (int i = 0; i < db.searchTitle(search).size(); i++) {
+                        returnStrings[i] = db.searchTitle(search).get(i).title.toString();
+                    }
+                }
+            } catch (Exception e) {
+                e.getMessage();
+            }
+
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, returnStrings);
+            ListView content = (ListView) findViewById(R.id.listView);
+            content.setAdapter(adapter);
+        }
 
     }
 

@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+import com.example.guiteam.binge.LocalMovieObject;
 
 import java.io.File;
 import java.io.InputStream;
@@ -47,7 +48,7 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(SearchActivity.this, ListingActivity.class);
-                i.putExtra("searchElem","listall");
+                i.putExtra("searchElem","%listall%");
                 startActivity(i);
             }
         });
