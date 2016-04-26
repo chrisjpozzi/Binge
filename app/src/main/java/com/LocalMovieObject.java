@@ -25,7 +25,7 @@ public class LocalMovieObject {
      */
     public boolean matchTitle(String title)
     {
-        return title.toLowerCase().indexOf(title.toLowerCase())>=0;
+        return this.title.toLowerCase().indexOf(title.toLowerCase())>=0;
     }
 
     public String toString()
