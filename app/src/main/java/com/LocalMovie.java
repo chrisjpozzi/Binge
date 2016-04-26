@@ -1,35 +1,43 @@
 package com.example.guiteam.binge;
-import java.util.Scanner;
+//import java.util.FileReader;
+import android.content.Context;
+
 import java.io.File;
 import java.io.PrintStream;
+import java.io.*;
+import java.lang.Integer;
+import java.util.*;
+
+import com.example.guiteam.binge.LocalMovieObject;
 /**
  * Created by Samantha on 4/21/2016.
  *
  * Reads movie objects from local text file and searches objects by title.
  */
 public class LocalMovie{
-    LocalMovieObject [] movies; //array of movie objects
-    String movieList="tinymovielist.txt"; //file movies are stored in
+    LocalMovieObject[] movies; //array of movie objects
+    String movieList="com/example/guiteam/binge/tinymovielist.txt"; //file movies are stored in
     int max=10000; //max amount of movies
     int n; //number of movies
 
     /*
     * Reads movie file and puts the movies into movie object.
      */
-    public void readLocalMovie()
+    public void readLocalMovie(Context context)
     {
-        Scanner f;
+        BufferedReader f;
         try
         {
-            this.movieList = movieList;
-            f = new Scanner(new File(movieList));
+            InputStream in = context.getAssets().open("tinymovielist.txt");
+            f = new BufferedReader(new InputStreamReader(in));
             movies = new LocalMovieObject[max];
 
             n=0;
-            while(f.hasNextLine())
+            String title = f.readLine();
+            while(title!=null)
             {
-                movies[n]=new LocalMovieObject(f.nextLine(), f.nextLine(), f.nextInt());
-                f.nextLine();
+                movies[n]=new LocalMovieObject(title, f.readLine(), new Integer(f.readLine()).intValue());
+                title = f.readLine();
                 n++;
             }
             f.close();
@@ -41,14 +49,12 @@ public class LocalMovie{
         }
     }
 
-    public LocalMovieObject[] searchTitle(String search) throws Exception
+    public ArrayList<LocalMovieObject> searchTitle(String search)
     {
-        LocalMovieObject [] result = new LocalMovieObject[1000];
-        int j=0;
+        ArrayList<LocalMovieObject> result = new ArrayList<LocalMovieObject>(1);
         for (int i=0; i<n; i++)
             if(movies[i].matchTitle(search)) {
-                result[j] = movies[i];
-                j++;
+                result.add(movies[i]);
             }
 
         return result;
