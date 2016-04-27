@@ -81,4 +81,16 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
 
     }
 
+    public void netflix(View view) throws Exception{
+        Intent intent = new Intent(SearchActivity.this, ListingActivity.class);
+        intent.putExtra("searchElem", "%netflix%");
+        startActivity(intent);
+    }
+
+    public void hulu(View view) throws Exception{
+        Intent intent = new Intent(SearchActivity.this, ListingActivity.class);
+        intent.putExtra("searchElem", "%hulu%");
+        startActivity(intent);
+    }
+
 }

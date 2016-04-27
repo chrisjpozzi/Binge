@@ -58,7 +58,11 @@ public class ListingActivity extends AppCompatActivity {
             ListView content = (ListView) findViewById(R.id.listView);
             content.setAdapter(adapter);
             content.setOnItemClickListener(new ItemList());
-        } else {
+        }
+        if(search.equals("%netflix%")){
+
+        }
+        else {
             LocalMovie db = new LocalMovie();
             db.readLocalMovie(getApplicationContext());
             String[] returnStrings = new String[1];
