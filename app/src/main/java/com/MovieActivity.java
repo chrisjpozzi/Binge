@@ -36,5 +36,6 @@ public class MovieActivity extends AppCompatActivity {
         TextView yearView = (TextView) findViewById(R.id.movieYear);
         yearView.setText(year.toString());
 
+
     }
 }

@@ -54,16 +54,23 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
         });
 
     }
-
+    /*
+    *When a movie is selected the information pops up as a Toast notification
+     */
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
         String item = parent.getItemAtPosition(position).toString();
         Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
     }
-
+    /*
+    *If nothing is selected nothing happens
+     */
     public void onNothingSelected(AdapterView<?> arg0){
         return;
     }
 
+    /*
+    *Takes the values to be searched from the user input and puts it into a string.
+     */
     public void search(View view) throws Exception{
         EditText text = (EditText) findViewById(R.id.editText);
         String input = text.getText().toString();

@@ -31,3 +31,8 @@ proguard/
 # Android Studio captures folder
 captures/
 
+# Bullshit that breaks everything
+.idea/modules.xml
+.idea/libraries/*
+.idea/
+
