@@ -10,15 +10,15 @@ public class LocalMovieObject {
     String title;
     String genre;
     int year;
-    //boolean netflix, hulu, amazon;
+    boolean netflix, hulu;
 
-    public LocalMovieObject(String title, String genre, int year)
+    public LocalMovieObject(String title, String genre, int year, boolean netflix, boolean hulu)
     {
         this.title= title;
         this.genre= genre;
         this.year= year;
-        //this.netflix=netflix;
-        //this.hulu=hulu;
+        this.netflix=netflix;
+        this.hulu=hulu;
         //this.amazon=amazon;
     }
 

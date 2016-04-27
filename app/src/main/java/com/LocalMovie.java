@@ -22,7 +22,6 @@ public class LocalMovie{
 
     /*
     * Reads movie file and puts the movies into movie object.
-    * @param context
      */
     public void readLocalMovie(Context context)
     {
@@ -37,7 +36,7 @@ public class LocalMovie{
             String title = f.readLine();
             while(title!=null)
             {
-                movies[n]=new LocalMovieObject(title, f.readLine(), new Integer(f.readLine()).intValue());
+                movies[n]=new LocalMovieObject(title, f.readLine(), new Integer(f.readLine()).intValue(), new Boolean(f.readLine()).booleanValue(), new Boolean(f.readLine()).booleanValue());
                 title = f.readLine();
                 n++;
             }
