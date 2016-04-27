@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+import com.example.guiteam.binge.LocalMovieObject;
 
 import java.io.File;
 import java.io.InputStream;
@@ -47,22 +48,29 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(SearchActivity.this, ListingActivity.class);
-                i.putExtra("searchElem","listall");
+                i.putExtra("searchElem","%listall%");
                 startActivity(i);
             }
         });
 
     }
-
+    /*
+    *When a movie is selected the information pops up as a Toast notification
+     */
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
         String item = parent.getItemAtPosition(position).toString();
         Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
     }
-
+    /*
+    *If nothing is selected nothing happens
+     */
     public void onNothingSelected(AdapterView<?> arg0){
         return;
     }
 
+    /*
+    *Takes the values to be searched from the user input and puts it into a string.
+     */
     public void search(View view) throws Exception{
         EditText text = (EditText) findViewById(R.id.editText);
         String input = text.getText().toString();

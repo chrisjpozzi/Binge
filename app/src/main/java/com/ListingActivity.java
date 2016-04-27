@@ -1,18 +1,29 @@
 package com.example.guiteam.binge;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import com.example.guiteam.binge.LocalMovie;
+import com.example.guiteam.binge.LocalMovieObject;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.TextView;
+
+import com.example.guiteam.binge.MovieActivity;
+
+import java.util.ArrayList;
 
 public class ListingActivity extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)  {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listing);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -21,7 +32,7 @@ public class ListingActivity extends AppCompatActivity {
         String search;
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
-            if(extras == null) {
+            if (extras == null) {
                 search = null;
             } else {
                 search = extras.getString("searchElem");
@@ -29,36 +40,58 @@ public class ListingActivity extends AppCompatActivity {
         } else {
             search = (String) savedInstanceState.getSerializable("searchElem");
         }
+        if (search.equals("%listall%")) {
+            LocalMovie db = new LocalMovie();
+            db.readLocalMovie(getApplicationContext());
+            String[] returnStrings = new String[1];
+            returnStrings[0] = "No results found.";
+            try {
+                returnStrings = new String[db.listAll().size()];
+                for (int j = 0; j < db.listAll().size(); j++) {
+                    returnStrings[j] = db.listAll().get(j).title.toString();
+                }
 
-        LocalMovie db = new LocalMovie();
-        db.readLocalMovie();
-        LocalMovieObject[] movies = new LocalMovieObject[1000];
-        try {
-            System.arraycopy(db.searchTitle(search), 0, movies, 0, 1000 );
-            //movies = db.searchTitle(search);
-        }catch(Exception e){e.getMessage();}
-
-        String[] returnStrings = new String[movies.length];
-        for(int i=0; i<movies.length; i++){
-            returnStrings[i] = search;
-            if(movies[i]!=null) {
-                returnStrings[i] = movies[i].toString();
+            } catch (Exception e) {
+                e.getMessage();
             }
-            else{
-                //i=movies.length;
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, returnStrings);
+            ListView content = (ListView) findViewById(R.id.listView);
+            content.setAdapter(adapter);
+            content.setOnItemClickListener(new ItemList());
+        } else {
+            LocalMovie db = new LocalMovie();
+            db.readLocalMovie(getApplicationContext());
+            String[] returnStrings = new String[1];
+            returnStrings[0] = "No results found.";
+            try {
+                if (db.searchTitle(search).size() != 0) {
+                    returnStrings = new String[db.searchTitle(search).size()];
+                    for (int i = 0; i < db.searchTitle(search).size(); i++) {
+                        returnStrings[i] = db.searchTitle(search).get(i).title.toString();
+                    }
+                }
+            } catch (Exception e) {
+                e.getMessage();
             }
-        }
 
-/*
-        String[] test = new String[25];
-        for(int j=0; j<25; j++){
-            test[j] = "New String"+j;
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, returnStrings);
+            ListView content = (ListView) findViewById(R.id.listView);
+            content.setAdapter(adapter);
+            content.setOnItemClickListener(new ItemList());
+
+
         }
-        */
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, returnStrings);
-        ListView content = (ListView) findViewById(R.id.listView);
-        content.setAdapter(adapter);
 
     }
-
+    class ItemList implements AdapterView.OnItemClickListener{
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id){
+            String thisMovie = (String)parent.getItemAtPosition(position);
+            if(!thisMovie.equals("No results found.")) {
+                Intent intent = new Intent(ListingActivity.this, MovieActivity.class);
+                intent.putExtra("thisMovie", thisMovie);
+                startActivity(intent);
+            }
+        }
+    }
 }

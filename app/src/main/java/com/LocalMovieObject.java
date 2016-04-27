@@ -10,13 +10,16 @@ public class LocalMovieObject {
     String title;
     String genre;
     int year;
+    boolean netflix, hulu;
 
-
-    public LocalMovieObject(String title, String genre, int year)
+    public LocalMovieObject(String title, String genre, int year, boolean netflix, boolean hulu)
     {
         this.title= title;
         this.genre= genre;
         this.year= year;
+        this.netflix=netflix;
+        this.hulu=hulu;
+        //this.amazon=amazon;
     }
 
     /*
@@ -25,8 +28,12 @@ public class LocalMovieObject {
      */
     public boolean matchTitle(String title)
     {
-        return title.toLowerCase().indexOf(title.toLowerCase())>=0;
+        return this.title.toLowerCase().indexOf(title.toLowerCase())>=0;
     }
+
+    public String hasNetflix(boolean netflix) {return this.title;}
+
+    public String hasHulu(boolean hulu) {return this.title;}
 
     public String toString()
     {
