@@ -31,6 +31,10 @@ public class LocalMovieObject {
         return this.title.toLowerCase().indexOf(title.toLowerCase())>=0;
     }
 
+    public String hasNetflix(boolean netflix) {return this.title;}
+
+    public String hasHulu(boolean hulu) {return this.title;}
+
     public String toString()
     {
         return String.format("%-35s %-12s %4d",title,genre,year);
