@@ -65,4 +65,12 @@ public class LocalMovie{
 
         return result;
     }
+    public LocalMovieObject exactMatch(String elem){
+        for(int i=0; i<n; i++){
+            if(movies[i].title.equals(elem)){
+                return movies[i];
+            }
+        }
+        return null;
+    }
 }
