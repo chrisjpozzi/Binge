@@ -7,8 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.guiteam.binge.MovieActivity"
-    android:background="#000000">
+    tools:context="com.binge.MovieActivity"
+    android:background="#333333">
 
     <LinearLayout
         android:orientation="vertical"
@@ -33,9 +33,9 @@
             android:layout_height="160dp"
             android:id="@+id/movieImage"
             android:layout_gravity="center_vertical"
-            android:src="#ff0000"
             android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp" />
+            android:layout_marginBottom="5dp"
+            android:src="#880e0f" />
 
         <TextView
             android:text="Genre"
@@ -51,7 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Medium Text"
+            android:text="Year"
             android:id="@+id/textView"
             android:textColor="#ffffff"
             android:textIsSelectable="false"
@@ -64,34 +64,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Small Text"
-            android:id="@+id/textView4"
-            android:textColor="#ffffff"
-            android:textIsSelectable="false"
-            android:autoText="false"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            style="@style/cont" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Medium Text"
-            android:id="@+id/textView5"
-            android:textColor="#ffffff"
-            android:textIsSelectable="false"
-            android:autoText="false"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            style="@style/cat" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Small Text"
-            android:id="@+id/textView6"
+            android:text="2009"
+            android:id="@+id/movieYear"
             android:textColor="#ffffff"
             android:textIsSelectable="false"
             android:autoText="false"

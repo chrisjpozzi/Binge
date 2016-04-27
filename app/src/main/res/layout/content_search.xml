@@ -9,8 +9,9 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.guiteam.binge.SearchActivity"
-    tools:showIn="@layout/activity_search">
+    tools:context="com.binge.SearchActivity"
+    tools:showIn="@layout/activity_search"
+    android:background="#333333">
 
     <EditText
         android:layout_width="wrap_content"
@@ -36,7 +37,9 @@
         android:text="Netflix"
         android:id="@+id/button"
         android:layout_alignTop="@+id/button2"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="#ffffff"
+        android:background="#ff0000" />
 
     <Button
         android:layout_width="wrap_content"
@@ -45,20 +48,23 @@
         android:id="@+id/button2"
         android:layout_marginBottom="190dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="#ffffff"
+        android:background="#08a108" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
         android:id="@+id/textView2"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:foregroundTint="#ef3333"
-        android:foreground="#f93b3b"
-        android:layout_above="@+id/editText" />
+        android:foreground="@color/binge_red"
+        android:enabled="false"
+        android:focusable="false"
+        android:editable="false"
+        android:layout_alignBottom="@+id/textView3" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -66,11 +72,11 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Binge"
         android:id="@+id/textView3"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
         android:textSize="50dp"
         android:textIsSelectable="true"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
 
     <Button
@@ -78,9 +84,11 @@
         android:layout_height="wrap_content"
         android:text="Go"
         android:id="@+id/searchButton"
-        android:layout_below="@+id/textView2"
-        android:layout_toEndOf="@+id/textView3"
-        android:onClick="search" />
+        android:onClick="search"
+        android:textColor="#ffffff"
+        android:background="#222222"
+        android:layout_alignBottom="@+id/editText"
+        android:layout_alignEnd="@+id/spinner" />
 
     <Button
         android:layout_width="wrap_content"
@@ -88,7 +96,9 @@
         android:text="List All"
         android:id="@+id/list"
         android:layout_alignTop="@+id/button2"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:textColor="#ffffff"
+        android:background="#222222" />
 
 
 
