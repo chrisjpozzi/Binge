@@ -12,7 +12,7 @@ import com.example.guiteam.binge.LocalMovieObject;
 /**
  * Created by Samantha on 4/21/2016.
  *
- * Reads movie objects from local text file and searches objects by title.
+ * Reads movie objects from local text file "tinymovielist.txt" and searches objects by title.
  */
 public class LocalMovie{
     LocalMovieObject[] movies; //array of movie objects
@@ -22,6 +22,7 @@ public class LocalMovie{
 
     /*
     * Reads movie file and puts the movies into movie object.
+    * @param context
      */
     public void readLocalMovie(Context context)
     {
@@ -48,6 +49,10 @@ public class LocalMovie{
             System.err.println(e);
         }
     }
+    /*
+    *Lists all of the movies in the text file.
+    *@return an array list of all of the movies in the text file.
+     */
     public ArrayList<LocalMovieObject> listAll(){
         ArrayList<LocalMovieObject> result = new ArrayList<LocalMovieObject>(1);
         for(int i=0; i<n; i++){
@@ -55,6 +60,11 @@ public class LocalMovie{
         }
         return result;
     }
+    /*
+    *Searches through movies by title and returns any/all matches of search.
+    * @param String to be searched for through the titles
+    * @return an ArrayList of the results that match the string searched for.
+     */
     public ArrayList<LocalMovieObject> searchTitle(String search)
     {
         ArrayList<LocalMovieObject> result = new ArrayList<LocalMovieObject>(1);
@@ -65,6 +75,12 @@ public class LocalMovie{
 
         return result;
     }
+    /*
+    *Search through movie titles for the exact match of the value searched.
+    * @param Accepts a String value of what was searched for.
+    * @Return If an exact match is found it returns that element of the movies array.
+    * If no exact match is found null is returned.
+     */
     public LocalMovieObject exactMatch(String elem){
         for(int i=0; i<n; i++){
             if(movies[i].title.equals(elem)){
