@@ -38,13 +38,8 @@
         android:id="@+id/button"
         android:layout_alignTop="@+id/button2"
         android:layout_alignParentStart="true"
-<<<<<<< HEAD
         android:clickable="true"
         android:onClick="netflix" />
-=======
-        android:textColor="#ffffff"
-        android:background="#ff0000" />
->>>>>>> 9aaac4b2e97c02b486c02d2403ac7d34ffa65e38
 
     <Button
         android:layout_width="wrap_content"
@@ -54,13 +49,8 @@
         android:layout_marginBottom="190dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-<<<<<<< HEAD
         android:onClick="hulu"
         android:clickable="true" />
-=======
-        android:textColor="#ffffff"
-        android:background="#08a108" />
->>>>>>> 9aaac4b2e97c02b486c02d2403ac7d34ffa65e38
 
     <TextView
         android:layout_width="wrap_content"
@@ -70,10 +60,8 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:foreground="@color/binge_red"
-        android:enabled="false"
-        android:focusable="false"
-        android:editable="false"
+        android:foregroundTint="#ef3333"
+        android:foreground="#f93b3b"
         android:layout_alignBottom="@+id/textView3" />
 
     <TextView
@@ -107,14 +95,6 @@
         android:id="@+id/list"
         android:layout_alignTop="@+id/button2"
         android:layout_alignParentEnd="true"
-<<<<<<< HEAD
         android:clickable="true" />
-=======
-        android:textColor="#ffffff"
-        android:background="#222222" />
->>>>>>> 9aaac4b2e97c02b486c02d2403ac7d34ffa65e38
-
-
-
 
 </RelativeLayout>

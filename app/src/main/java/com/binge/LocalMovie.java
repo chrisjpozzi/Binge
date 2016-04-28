@@ -85,4 +85,24 @@ public class LocalMovie{
         }
         return null;
     }
+
+    public ArrayList<LocalMovieObject> searchNetflix(){
+        ArrayList<LocalMovieObject> result = new ArrayList<LocalMovieObject>(1);
+        for(int i=0; i<n; i++){
+            if(movies[i].hasNetflix()){
+                result.add(movies[i]);
+            }
+        }
+        return result;
+    }
+
+    public ArrayList<LocalMovieObject> searchHulu(){
+        ArrayList<LocalMovieObject> result = new ArrayList<LocalMovieObject>(1);
+        for(int i=0; i<n; i++){
+            if(movies[i].hasHulu()){
+                result.add(movies[i]);
+            }
+        }
+        return result;
+    }
 }

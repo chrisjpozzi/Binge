@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
-import com.example.guiteam.binge.LocalMovieObject;
+import com.binge.LocalMovieObject;
 
 
 public class SearchActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {

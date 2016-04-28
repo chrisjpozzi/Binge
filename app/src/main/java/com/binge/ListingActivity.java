@@ -5,23 +5,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-<<<<<<< HEAD:app/src/main/java/com/ListingActivity.java
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import com.example.guiteam.binge.LocalMovie;
-import com.example.guiteam.binge.LocalMovieObject;
+import com.binge.LocalMovie;
+import com.binge.LocalMovieObject;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.TextView;
 
-import com.example.guiteam.binge.MovieActivity;
+import com.binge.MovieActivity;
 
 import java.util.ArrayList;
-=======
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
->>>>>>> 9aaac4b2e97c02b486c02d2403ac7d34ffa65e38:app/src/main/java/com/binge/ListingActivity.java
 
 public class ListingActivity extends AppCompatActivity {
 
@@ -62,8 +59,41 @@ public class ListingActivity extends AppCompatActivity {
             content.setAdapter(adapter);
             content.setOnItemClickListener(new ItemList());
         }
-        if(search.equals("%netflix%")){
-
+        else if(search.equals("%netflix%")){
+            LocalMovie db = new LocalMovie();
+            db.readLocalMovie(getApplicationContext());
+            String[] returnStrings = new String[1];
+            returnStrings[0] = "No results found.";
+            try{
+                returnStrings = new String[db.searchNetflix().size()];
+                for(int h=0; h<db.searchNetflix().size(); h++){
+                    returnStrings[h] = db.searchNetflix().get(h).title.toString();
+                }
+            }catch (Exception e){
+                e.getMessage();
+            }
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, returnStrings);
+            ListView content = (ListView) findViewById(R.id.listView);
+            content.setAdapter(adapter);
+            content.setOnItemClickListener(new ItemList());
+        }
+        else if(search.equals("%hulu%")) {
+            LocalMovie db = new LocalMovie();
+            db.readLocalMovie(getApplicationContext());
+            String[] returnStrings = new String[1];
+            returnStrings[0] = "No results found.";
+            try {
+                returnStrings = new String[db.searchHulu().size()];
+                for (int h = 0; h < db.searchHulu().size(); h++) {
+                    returnStrings[h] = db.searchHulu().get(h).title.toString();
+                }
+            } catch (Exception e) {
+                e.getMessage();
+            }
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, returnStrings);
+            ListView content = (ListView) findViewById(R.id.listView);
+            content.setAdapter(adapter);
+            content.setOnItemClickListener(new ItemList());
         }
         else {
             LocalMovie db = new LocalMovie();

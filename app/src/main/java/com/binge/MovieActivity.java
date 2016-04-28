@@ -3,9 +3,9 @@ package com.binge;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
-import com.example.guiteam.binge.LocalMovie;
+import com.binge.LocalMovie;
 
-import com.example.guiteam.binge.LocalMovieObject;
+import com.binge.LocalMovieObject;
 
 
 public class MovieActivity extends AppCompatActivity {
