@@ -8,7 +8,14 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.guiteam.binge.LoginActivity">
+<<<<<<< HEAD
+    tools:context="com.example.guiteam.binge.LoginActivity"
+    android:background="#333333"
+    android:theme="@style/Binge">
+=======
+    tools:context="com.binge.LoginActivity"
+    android:background="#333333">
+>>>>>>> 9aaac4b2e97c02b486c02d2403ac7d34ffa65e38
 
     <!-- Login progress -->
     <ProgressBar
@@ -22,7 +29,8 @@
     <ScrollView
         android:id="@+id/login_form"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:clickable="false">
 
         <LinearLayout
             android:id="@+id/email_login_form"
@@ -32,7 +40,9 @@
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:touchscreenBlocksFocus="false"
+                android:background="#333333">
 
                 <AutoCompleteTextView
                     android:id="@+id/email"
@@ -41,25 +51,33 @@
                     android:hint="@string/prompt_email"
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
-                    android:singleLine="true" />
+                    android:singleLine="true"
+                    android:textColor="#ffffff"
+                    android:textColorHighlight="#ffffff"
+                    android:textColorHint="#ffffff"
+                    android:textColorLink="#ffffff"
+                    android:textIsSelectable="true" />
 
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="#333333">
 
                 <EditText
                     android:id="@+id/password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/prompt_password"
+                    android:hint="Password"
                     android:imeActionId="@+id/login"
-                    android:imeActionLabel="@string/action_sign_in_short"
+                    android:imeActionLabel="Sign in"
                     android:imeOptions="actionUnspecified"
                     android:inputType="textPassword"
                     android:maxLines="1"
                     android:singleLine="true" />
+
+
 
             </android.support.design.widget.TextInputLayout>
 
@@ -71,8 +89,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/action_sign_in"
+<<<<<<< HEAD
+                android:text="@string/action_sign_in_short"
                 android:textStyle="bold" />
+=======
+                android:text="@string/action_sign_in"
+                android:textStyle="bold"
+                android:background="#222222"
+                android:textColor="#dddddd"
+                android:singleLine="false" />
+>>>>>>> 9aaac4b2e97c02b486c02d2403ac7d34ffa65e38
 
         </LinearLayout>
     </ScrollView>

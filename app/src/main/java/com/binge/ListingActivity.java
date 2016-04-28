@@ -1,12 +1,11 @@
-package com.example.guiteam.binge;
+package com.binge;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+<<<<<<< HEAD:app/src/main/java/com/ListingActivity.java
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -19,6 +18,10 @@ import android.widget.TextView;
 import com.example.guiteam.binge.MovieActivity;
 
 import java.util.ArrayList;
+=======
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+>>>>>>> 9aaac4b2e97c02b486c02d2403ac7d34ffa65e38:app/src/main/java/com/binge/ListingActivity.java
 
 public class ListingActivity extends AppCompatActivity {
 

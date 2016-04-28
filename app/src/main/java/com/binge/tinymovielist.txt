@@ -40,9 +40,13 @@ false
 true
 Whatever
 Fun
+<<<<<<< HEAD:app/src/main/java/com/tinymovielist.txt
 1232
 false
 false
+=======
+12321
+>>>>>>> 9aaac4b2e97c02b486c02d2403ac7d34ffa65e38:app/src/main/java/com/binge/tinymovielist.txt
 Shank
 Action
 2010
