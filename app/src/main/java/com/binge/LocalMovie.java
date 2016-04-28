@@ -1,14 +1,11 @@
-package com.example.guiteam.binge;
+package com.binge;
 //import java.util.FileReader;
 import android.content.Context;
 
-import java.io.File;
-import java.io.PrintStream;
 import java.io.*;
 import java.lang.Integer;
 import java.util.*;
 
-import com.example.guiteam.binge.LocalMovieObject;
 /**
  * Created by Samantha on 4/21/2016.
  *

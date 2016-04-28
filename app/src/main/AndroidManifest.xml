@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.guiteam.binge">
+    package="com.binge">
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".LoginActivity"
+            android:name="com.binge.LoginActivity"
             android:label="@string/title_activity_login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SearchActivity"
+            android:name="com.binge.SearchActivity"
             android:label="@string/title_activity_search"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -31,7 +31,7 @@
             android:label="@string/title_activity_listing"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".MovieActivity"
+            android:name="com.binge.MovieActivity"
             android:label="@string/title_activity_movie"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
