@@ -110,7 +110,7 @@
         completions."
     </string>
     <string name="title_activity_list">Search Results</string>
-    <string name="title_activity_search">SearchActivity</string>
-    <string name="title_activity_listing">ListingActivity</string>
-    <string name="title_activity_movie">MovieActivity</string>
+    <string name="title_activity_search">Binge</string>
+    <string name="title_activity_listing">Search Results</string>
+    <string name="title_activity_movie">Movie Results</string>
 </resources>
