@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.binge.MainActivity"
+    tools:showIn="@layout/activity_main"
+    style="@style/thing2">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText2"
+        android:hint="@string/abc_search_hint"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/button4" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go"
+        android:id="@+id/button5"
+        android:onClick="search"
+        android:textColor="#ffffff"
+        android:background="#222222"
+        android:layout_alignBottom="@+id/editText2"
+        android:layout_alignEnd="@+id/spinner2"
+        android:nestedScrollingEnabled="false" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select search field..."
+        android:id="@+id/textView4"
+        android:layout_marginTop="23dp"
+        android:layout_below="@+id/editText2"
+        android:layout_alignParentStart="true"
+        android:textColor="#ffffff" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:prompt="@string/search_by"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/textView4"
+        android:layout_alignEnd="@+id/button6" />
+
+    <Button
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:text="Netflix"
+        android:id="@+id/button3"
+        android:clickable="true"
+        android:onClick="netflix"
+        android:layout_alignTop="@+id/button4"
+        android:layout_alignParentStart="true"
+        android:textColor="#ffffff"
+        android:background="#e21414" />
+
+    <Button
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:text="Hulu"
+        android:id="@+id/button4"
+        android:onClick="hulu"
+        android:clickable="true"
+        android:textColor="#ffffff"
+        android:background="#1f9b23"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:text="All"
+        android:id="@+id/button6"
+        android:layout_alignTop="@+id/button4"
+        android:layout_alignParentEnd="true"
+        android:clickable="true"
+        android:textColor="#ffffff"
+        android:background="#2424bf" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="List by Availability"
+        android:id="@+id/textView5"
+        android:layout_marginBottom="29dp"
+        style="@style/cat"
+        android:layout_above="@+id/button3"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="or"
+        android:id="@+id/textView6"
+        android:textColor="#ffffff"
+        android:layout_above="@+id/textView5"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Binge © Samantha Brewer, Nathan Ross, Brandi Turner, CJ Pozzi"
+        android:id="@+id/textView7"
+        android:layout_marginBottom="43dp"
+        android:editable="false"
+        android:elegantTextHeight="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:textSize="12dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:textAlignment="center" />
+
+</RelativeLayout>
