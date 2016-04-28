@@ -59,8 +59,41 @@ public class ListingActivity extends AppCompatActivity {
             content.setAdapter(adapter);
             content.setOnItemClickListener(new ItemList());
         }
-        if(search.equals("%netflix%")){
-
+        else if(search.equals("%netflix%")){
+            LocalMovie db = new LocalMovie();
+            db.readLocalMovie(getApplicationContext());
+            String[] returnStrings = new String[1];
+            returnStrings[0] = "No results found.";
+            try{
+                returnStrings = new String[db.searchNetflix().size()];
+                for(int h=0; h<db.searchNetflix().size(); h++){
+                    returnStrings[h] = db.searchNetflix().get(h).title.toString();
+                }
+            }catch (Exception e){
+                e.getMessage();
+            }
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, returnStrings);
+            ListView content = (ListView) findViewById(R.id.listView);
+            content.setAdapter(adapter);
+            content.setOnItemClickListener(new ItemList());
+        }
+        else if(search.equals("%hulu%")){
+            LocalMovie db = new LocalMovie();
+            db.readLocalMovie(getApplicationContext());
+            String[] returnStrings = new String[1];
+            returnStrings[0] = "No results found.";
+            try{
+                returnStrings = new String[db.searchHulu().size()];
+                for(int h=0; h<db.searchHulu().size(); h++){
+                    returnStrings[h] = db.searchHulu().get(h).title.toString();
+                }
+            }catch (Exception e){
+                e.getMessage();
+            }
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, returnStrings);
+            ListView content = (ListView) findViewById(R.id.listView);
+            content.setAdapter(adapter);
+            content.setOnItemClickListener(new ItemList());
         }
         else {
             LocalMovie db = new LocalMovie();
