@@ -2,6 +2,8 @@ package com.binge;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import com.binge.LocalMovie;
 
@@ -36,7 +38,14 @@ public class MovieActivity extends AppCompatActivity {
         Integer year = new Integer(thisMovie.year);
         TextView yearView = (TextView) findViewById(R.id.movieYear);
         yearView.setText(year.toString());
-
+        Button netflix = (Button)findViewById(R.id.netflixBool);
+        Button hulu = (Button)findViewByID(R.id.huluBool);
+        if(!thisMovie.hasNetflix()){
+            netflix.setVisibility(View.INVISIBLE);
+        }
+        if(!thisMovie.hasHulu()){
+            hulu.setVisibility(View.INVISIBLE);
+        }
 
     }
 }
