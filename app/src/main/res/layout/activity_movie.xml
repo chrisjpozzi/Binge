@@ -7,9 +7,14 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+<<<<<<< HEAD
     tools:context="com.example.guiteam.binge.MovieActivity"
     android:background="#333333"
     android:theme="@style/Binge">
+=======
+    tools:context="com.binge.MovieActivity"
+    android:background="#333333">
+>>>>>>> 9aaac4b2e97c02b486c02d2403ac7d34ffa65e38
 
     <LinearLayout
         android:orientation="vertical"
@@ -34,9 +39,13 @@
             android:layout_height="160dp"
             android:id="@+id/movieImage"
             android:layout_gravity="center_vertical"
+<<<<<<< HEAD
             android:src="#ff740404"
+=======
+>>>>>>> 9aaac4b2e97c02b486c02d2403ac7d34ffa65e38
             android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp" />
+            android:layout_marginBottom="5dp"
+            android:src="#880e0f" />
 
         <TextView
             android:text="Genre"
@@ -69,12 +78,17 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="2009"
             android:id="@+id/movieYear"
+<<<<<<< HEAD
             android:textColor="#cccccc"
+=======
+            android:textColor="#ffffff"
+>>>>>>> 9aaac4b2e97c02b486c02d2403ac7d34ffa65e38
             android:textIsSelectable="false"
             android:autoText="false"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
             style="@style/cont" />
+<<<<<<< HEAD
 
         <GridLayout
             android:layout_width="match_parent"
@@ -106,6 +120,8 @@
                 android:visibility="visible" />
 
         </GridLayout>
+=======
+>>>>>>> 9aaac4b2e97c02b486c02d2403ac7d34ffa65e38
 
     </LinearLayout>
 

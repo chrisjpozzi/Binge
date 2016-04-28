@@ -1,4 +1,4 @@
-package com.example.guiteam.binge;
+package com.binge;
 
 /**
  * Created by Samantha on 4/21/2016.
