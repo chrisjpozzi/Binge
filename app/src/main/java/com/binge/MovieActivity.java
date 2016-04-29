@@ -39,7 +39,7 @@ public class MovieActivity extends AppCompatActivity {
         TextView yearView = (TextView) findViewById(R.id.movieYear);
         yearView.setText(year.toString());
         Button netflix = (Button)findViewById(R.id.netflixBool);
-        Button hulu = (Button)findViewByID(R.id.huluBool);
+        Button hulu = (Button)findViewById(R.id.huluBool);
         if(!thisMovie.hasNetflix()){
             netflix.setVisibility(View.INVISIBLE);
         }

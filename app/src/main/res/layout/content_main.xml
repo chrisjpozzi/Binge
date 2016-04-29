@@ -16,77 +16,76 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText2"
+        android:id="@+id/editText"
         android:hint="@string/abc_search_hint"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/button4" />
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Go"
-        android:id="@+id/button5"
+        android:id="@+id/searchButton"
         android:onClick="search"
         android:textColor="#ffffff"
         android:background="#222222"
-        android:layout_alignBottom="@+id/editText2"
-        android:layout_alignEnd="@+id/spinner2"
-        android:nestedScrollingEnabled="false" />
+        android:nestedScrollingEnabled="false"
+        android:layout_alignTop="@+id/editText"
+        android:layout_toEndOf="@+id/textView5" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Select search field..."
         android:id="@+id/textView4"
-        android:layout_marginTop="23dp"
-        android:layout_below="@+id/editText2"
-        android:layout_alignParentStart="true"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        android:layout_marginTop="24dp"
+        android:layout_below="@+id/searchButton"
+        android:layout_alignParentStart="true" />
 
     <Spinner
-        android:id="@+id/spinner2"
+        android:id="@+id/spinner"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:prompt="@string/search_by"
         android:layout_marginTop="5dp"
-        android:layout_below="@+id/textView4"
-        android:layout_alignEnd="@+id/button6" />
+        android:layout_below="@+id/textView4" />
 
     <Button
         android:layout_width="115dp"
         android:layout_height="wrap_content"
         android:text="Netflix"
-        android:id="@+id/button3"
+        android:id="@+id/button"
         android:clickable="true"
         android:onClick="netflix"
-        android:layout_alignTop="@+id/button4"
-        android:layout_alignParentStart="true"
         android:textColor="#ffffff"
-        android:background="#e21414" />
+        android:background="#e21414"
+        android:layout_alignTop="@+id/button2"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="115dp"
         android:layout_height="wrap_content"
         android:text="Hulu"
-        android:id="@+id/button4"
+        android:id="@+id/button2"
         android:onClick="hulu"
         android:clickable="true"
         android:textColor="#ffffff"
         android:background="#1f9b23"
-        android:layout_centerVertical="true"
+        android:layout_marginTop="126dp"
+        android:layout_below="@+id/spinner"
         android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="115dp"
         android:layout_height="wrap_content"
         android:text="All"
-        android:id="@+id/button6"
-        android:layout_alignTop="@+id/button4"
-        android:layout_alignParentEnd="true"
+        android:id="@+id/list"
         android:clickable="true"
         android:textColor="#ffffff"
-        android:background="#2424bf" />
+        android:background="#2424bf"
+        android:layout_alignTop="@+id/button2"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -94,9 +93,9 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="List by Availability"
         android:id="@+id/textView5"
-        android:layout_marginBottom="29dp"
         style="@style/cat"
-        android:layout_above="@+id/button3"
+        android:layout_marginBottom="30dp"
+        android:layout_above="@+id/button"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -114,14 +113,13 @@
         android:layout_height="wrap_content"
         android:text="Binge © Samantha Brewer, Nathan Ross, Brandi Turner, CJ Pozzi"
         android:id="@+id/textView7"
-        android:layout_marginBottom="43dp"
         android:editable="false"
         android:elegantTextHeight="false"
         android:focusable="false"
         android:focusableInTouchMode="false"
         android:textSize="12dp"
+        android:textAlignment="center"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:textAlignment="center" />
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
