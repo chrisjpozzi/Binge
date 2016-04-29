@@ -3,6 +3,7 @@ package com.binge;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -73,6 +74,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
@@ -160,7 +164,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private boolean tryLogin(){
         String email = mEmailView.getText().toString();
         String password = mPasswordView.getText().toString();
-        if(email.equals("email")&&password.equals("pass")){
+        if(email.equals("foo@bar.com")&&password.equals("helloworld")){
             return true;
         }
         return false;
